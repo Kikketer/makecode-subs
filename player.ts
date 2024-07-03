@@ -14,16 +14,19 @@ namespace Player {
         myBoats[0].performAction()
     }
 
+    function createBoat() {
+        myBoats.push(new Boat(60, 60))
+    }
+
     export function init() {
         myName = Math.randomRange(0, 20)
         console.log('Init player ' + myName)
 
         myBoats[0] = new Boat(30, 30)
 
-        Multiplayer.init(myBoats[0].sprite)
-
         controller.up.onEvent(ControllerButtonEvent.Pressed, move)
         controller.A.onEvent(ControllerButtonEvent.Pressed, perform)
+        controller.B.onEvent(ControllerButtonEvent.Pressed, createBoat)
     }
 
     export function onPlanningComplete() {}
