@@ -6,7 +6,8 @@ namespace Game {
     let currentPhase: Phase = Phase.Planning
 
     export function init() {
-        scene.setBackgroundColor(15)
+        scene.setBackgroundColor(0)
+        scene.setBackgroundImage(assets.image`Main Board`)
         
         Player.init()
     }
