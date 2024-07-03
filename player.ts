@@ -1,6 +1,7 @@
 namespace Player {
+    let mySprite: Sprite
     export let myName: number
-    let myBoats: Array<typeof Boat> = []
+    let myBoats: Array<Boat> = []
 
     function move() {
         console.log('Moving! ' + myName)
@@ -8,6 +9,8 @@ namespace Player {
     }
 
     function perform() {
+        // mp.setPlayerState(mp.getPlayerByIndex(0), 0, 1)
+        mp.getPlayerProperty(mp.getPlayerByIndex(0), mp.PlayerProperty.Index)
         myBoats[0].performAction()
     }
 
@@ -15,7 +18,9 @@ namespace Player {
         myName = Math.randomRange(0, 20)
         console.log('Init player ' + myName)
 
-        Boat.init()
+        myBoats[0] = new Boat()
+
+        Multiplayer.init(myBoats[0].sprite)
 
         controller.up.onEvent(ControllerButtonEvent.Pressed, move)
         controller.A.onEvent(ControllerButtonEvent.Pressed, perform)

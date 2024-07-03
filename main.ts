@@ -8,7 +8,6 @@ namespace Game {
     export function init() {
         scene.setBackgroundColor(15)
         
-        Multiplayer.init()
         Player.init()
     }
 }
