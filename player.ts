@@ -18,7 +18,7 @@ namespace Player {
         myName = Math.randomRange(0, 20)
         console.log('Init player ' + myName)
 
-        myBoats[0] = new Boat()
+        myBoats[0] = new Boat(30, 30)
 
         Multiplayer.init(myBoats[0].sprite)
 

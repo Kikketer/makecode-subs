@@ -11,8 +11,13 @@ class Boat {
         depth?: number
     }
 
-    constructor() {
+    constructor(x?: number, y?: number) {
         this.sprite = sprites.create(assets.image`boat_l`, SpriteKind.Player)
+        if (x && y) {
+            this.sprite.x = x
+            this.sprite.y = y
+        }
+        
         animation.runImageAnimation(
             this.sprite, 
             assets.animation`boat_l`,
