@@ -1,50 +1,46 @@
 {
-    "name": "Subs",
-    "description": "",
-    "dependencies": {
-        "device": "*",
-        "multiplayer": "*"
-    },
-    "files": [
-        "main.blocks",
-        "main.ts",
-        "README.md",
-        "assets.json",
-        "multiplayer.ts",
-        "player.ts",
-        "images.g.jres",
-        "images.g.ts",
-        "tilemap.g.jres",
-        "tilemap.g.ts",
-        "boat.ts"
-    ],
-    "testFiles": [
-        "test.ts"
-    ],
-    "targetVersions": {
-        "target": "1.12.53",
-        "targetId": "arcade"
-    },
-    "supportedTargets": [
-        "arcade"
-    ],
-    "preferredEditor": "tsprj",
-    "palette": [
-        "#000000",
-        "#FFFFFF",
-        "#FFFFFF",
-        "#FF93C4",
-        "#FF8135",
-        "#FFF609",
-        "#249CA3",
-        "#78DC52",
-        "#003FAD",
-        "#87F2FF",
-        "#8E2EC4",
-        "#A4839F",
-        "#5C406c",
-        "#E5CDC4",
-        "#91463d",
-        "#000000"
-    ]
+  "name": "Subs",
+  "description": "",
+  "dependencies": {
+    "device": "*",
+    "multiplayer": "*"
+  },
+  "files": [
+    "main.blocks",
+    "main.ts",
+    "README.md",
+    "assets.json",
+    "multiplayer.ts",
+    "player.ts",
+    "images.g.jres",
+    "images.g.ts",
+    "tilemap.g.jres",
+    "tilemap.g.ts",
+    "boat.ts"
+  ],
+  "testFiles": ["test.ts"],
+  "targetVersions": {
+    "target": "1.12.53",
+    "targetId": "arcade"
+  },
+  "supportedTargets": ["arcade"],
+  "preferredEditor": "tsprj",
+  "palette": [
+    "#000000",
+    "#213B25",
+    "#3A604A",
+    "#4F7754",
+    "#A19F7C",
+    "#77744F",
+    "#775C4F",
+    "#603B3A",
+    "#170E19",
+    "#2F213B",
+    "#433A60",
+    "#4F5277",
+    "#65738C",
+    "#7C94A1",
+    "#A0B9BA",
+    "#C0D1CC"
+  ]
 }
