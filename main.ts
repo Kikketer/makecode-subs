@@ -6,11 +6,10 @@ namespace Game {
     let currentPhase: Phase = Phase.Planning
 
     export function init() {
-        scene.setBackgroundColor(9)
+        scene.setBackgroundColor(15)
         
         Multiplayer.init()
         Player.init()
     }
 }
-
 Game.init()
