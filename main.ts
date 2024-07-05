@@ -4,12 +4,14 @@ enum Phase {
 }
 namespace Game {
     let currentPhase: Phase = Phase.Planning
+    let player: SubsPlayer
 
     export function init() {
         scene.setBackgroundColor(0)
         scene.setBackgroundImage(assets.image`Main Board`)
-        
-        Multiplayer.init()
+
+        player = new SubsPlayer()
     }
 }
+
 Game.init()

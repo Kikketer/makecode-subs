@@ -1,13 +1,13 @@
 class SubsPlayer {
-    mySprite: Sprite
+    // mySprite: Sprite
 
-    constructor(ctrl: controller.Controller, sprite: Sprite) {
-        this.mySprite = sprite
-        ctrl.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, () => this.move())
+    constructor() {
+        // this.mySprite = sprite
+        // ctrl.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, () => this.move())
     }
 
     move() {
-        this.mySprite.setVelocity(this.mySprite.vx + 2, 0)
+        // this.mySprite.setVelocity(this.mySprite.vx + 2, 0)
     }
 }
 // namespace Player {
