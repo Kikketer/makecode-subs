@@ -11,6 +11,8 @@ namespace Game {
         scene.setBackgroundImage(assets.image`Main Board`)
 
         player = new SubsPlayer()
+
+        if (currentPhase === Phase.Planning) {}
     }
 }
 

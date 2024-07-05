@@ -16,7 +16,10 @@
         "images.g.ts",
         "tilemap.g.jres",
         "tilemap.g.ts",
-        "boat.ts"
+        "boat.ts",
+        "sub.ts",
+        "mine.ts",
+        "board.ts"
     ],
     "testFiles": [
         "test.ts"

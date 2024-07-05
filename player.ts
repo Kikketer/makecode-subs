@@ -2,8 +2,8 @@ type Depth = 1 | 2 | 3
 
 class SubsPlayer {
     boats: Array<Boat> = []
-    subs: Array<{ x: number, y: number, depth: Depth }> = []
-    mine: { x: number, y: number }
+    subs: Array<Sub> = []
+    mine: Mine
     queuedAction: { action: ActionType, boat: Boat, toX?: number, toY?: number }
 
     constructor() {
