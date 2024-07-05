@@ -1,45 +1,42 @@
+type Depth = 1 | 2 | 3
+
 class SubsPlayer {
-    // mySprite: Sprite
+    boats: Array<Boat> = []
+    subs: Array<{ x: number, y: number, depth: Depth }> = []
+    mine: { x: number, y: number }
+    queuedAction: { action: ActionType, boat: Boat, toX?: number, toY?: number }
 
     constructor() {
         // this.mySprite = sprite
         // ctrl.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, () => this.move())
     }
 
-    move() {
-        // this.mySprite.setVelocity(this.mySprite.vx + 2, 0)
+    // Setups:
+    placeSub(x: number, y: number, depth: Depth) {}
+
+    placeMine(x: number, y: number) {}
+
+    moveBoat(boatIndex: number, x: number, y: number) {
+        if (!this.boats[boatIndex]) return
+
+        this.queuedAction = {
+            action: ActionType.Move,
+            boat: this.boats[boatIndex],
+            toX: x,
+            toY: y
+        }
+    }
+
+    fireDepthCharge(boatIndex: number) {
+        if (!this.boats[boatIndex]) return
+
+        this.queuedAction = {
+            action: ActionType.Fire,
+            boat: this.boats[boatIndex]
+        }
+    }
+
+    clearAction() {
+        this.queuedAction = undefined
     }
 }
-// namespace Player {
-//     let mySprite: Sprite
-//     export let myName: number
-//     let myBoats: Array<Boat> = []
-
-//     function move() {
-//         console.log('Moving! ' + myName)
-//         myBoats[0].move(10, 5)
-//     }
-
-//     function perform() {
-//         // mp.setPlayerState(mp.getPlayerByIndex(0), 0, 1)
-//         mp.getPlayerProperty(mp.getPlayerByIndex(0), mp.PlayerProperty.Index)
-//         myBoats[0].performAction()
-//     }
-
-//     function createBoat() {
-//         myBoats.push(new Boat(60, 60))
-//     }
-
-//     export function init() {
-//         myName = Math.randomRange(0, 20)
-//         console.log('Init player ' + myName)
-
-//         myBoats[0] = new Boat(30, 30)
-
-//         controller.up.onEvent(ControllerButtonEvent.Pressed, move)
-//         controller.A.onEvent(ControllerButtonEvent.Pressed, perform)
-//         controller.B.onEvent(ControllerButtonEvent.Pressed, createBoat)
-//     }
-
-//     export function onPlanningComplete() {}
-// }

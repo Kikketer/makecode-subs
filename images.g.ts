@@ -22,36 +22,55 @@ namespace myImages {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `;
+            case "image3":
+            case "boat_l":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . 4 4 4 4 4 4 4 4 4 4 4 4 . . 
+. . . 4 4 4 4 4 4 4 4 4 4 . . . 
+. . . . . 4 4 4 4 4 4 4 . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
             case "image2":
             case "Main Board":return img`
 3333333333333333333333333333333333333333333333333333333333333333333333333333333381111111111111111111111111111111111111111111111111111111111111111111111111111111
 3333333333333333333333333333333333333333333333333333333333333333333333333333333381111111111111111111111111111111111111111111111111111111111111111111111111111111
 3333333333333333333ddddddddddddddddddddddddddddddddddddddddd3333333333333333333381111111111111111111ddddddddddddddddddddddddddddddddddddddddd1111111111111111111
-333333333333333333dffffffffdffffdfffffdffffffdfffffdffffffffd33333333333333333338111111111111111111dffffffffdffffdfffffdffffffdfffffdffffffffd111111111111111111
-33333333333333333dffffffffdfffffdfffffdffffffdffffffdffffffffd333333333333333333811111111111111111dffffffffdfffffdfffffdffffffdffffffdffffffffd11111111111111111
-33333333333333333dffffffffdfffffdfffffdffffffdffffffdffffffffd333333333333333333811111111111111111dffffffffdfffffdfffffdffffffdffffffdffffffffd11111111111111111
-3333333333333333dffffffffdffffffdfffffdffffffdfffffffdffffffffd3333333333333333381111111111111111dffffffffdffffffdfffffdffffffdfffffffdffffffffd1111111111111111
+333333333333333333dffffffdffffffdffffffdffffffdffffffdffffffd33333333333333333338111111111111111111dffffffdffffffdffffffdffffffdffffffdffffffd111111111111111111
+33333333333333333dfffffffdffffffdffffffdffffffdffffffdfffffffd333333333333333333811111111111111111dfffffffdffffffdffffffdffffffdffffffdfffffffd11111111111111111
+33333333333333333dffffffdfffffffdffffffdffffffdffffffdfffffffd333333333333333333811111111111111111dffffffdfffffffdffffffdffffffdffffffdfffffffd11111111111111111
+3333333333333333dfffffffdfffffffdffffffdffffffdfffffffdfffffffd3333333333333333381111111111111111dfffffffdfffffffdffffffdffffffdfffffffdfffffffd1111111111111111
 333333333333333ddddddddddddddddddddddddddddddddddddddddddddddddd33333333333333338111111111111111ddddddddddddddddddddddddddddddddddddddddddddddddd111111111111111
-333333333333333dffffffffdffffffdffffffdfffffffdfffffffdffffffffd33333333333333338111111111111111dffffffffdffffffdffffffdfffffffdfffffffdffffffffd111111111111111
-33333333333333dffffffffdfffffffdffffffdfffffffdfffffffdfffffffffd333333333333333811111111111111dffffffffdfffffffdffffffdfffffffdfffffffdfffffffffd11111111111111
-3333333333333dffffffffdfffffffdfffffffdfffffffdfffffffdffffffffffd3333333333333381111111111111dffffffffdfffffffdfffffffdfffffffdfffffffdffffffffffd1111111111111
-3333333333333dffffffffdfffffffdfffffffdfffffffdffffffffdfffffffffd3333333333333381111111111111dffffffffdfffffffdfffffffdfffffffdffffffffdfffffffffd1111111111111
-333333333333dffffffffdffffffffdfffffffdfffffffdffffffffdffffffffffd33333333333338111111111111dffffffffdffffffffdfffffffdfffffffdffffffffdffffffffffd111111111111
+333333333333333dfffffffdfffffffdfffffffdffffffdfffffffdffffffffd33333333333333338111111111111111dfffffffdfffffffdfffffffdffffffdfffffffdffffffffd111111111111111
+33333333333333dffffffffdfffffffdfffffffdfffffffdfffffffdffffffffd333333333333333811111111111111dffffffffdfffffffdfffffffdfffffffdfffffffdffffffffd11111111111111
+3333333333333dffffffffdffffffffdfffffffdfffffffdfffffffdfffffffffd3333333333333381111111111111dffffffffdffffffffdfffffffdfffffffdfffffffdfffffffffd1111111111111
+3333333333333dffffffffdffffffffdfffffffdfffffffdffffffffdffffffffd3333333333333381111111111111dffffffffdffffffffdfffffffdfffffffdffffffffdffffffffd1111111111111
+333333333333dffffffffdffffffffdffffffffdfffffffdffffffffdfffffffffd33333333333338111111111111dffffffffdffffffffdffffffffdfffffffdffffffffdfffffffffd111111111111
 33333333333ddddddddddddddddddddddddddddddddddddddddddddddddddddddddd333333333333811111111111ddddddddddddddddddddddddddddddddddddddddddddddddddddddddd11111111111
-33333333333dffffffffdffffffffdffffffffdffffffffdffffffffdffffffffffd333333333333811111111111dffffffffdffffffffdffffffffdffffffffdffffffffdffffffffffd11111111111
-3333333333dffffffffdfffffffffdffffffffdffffffffdfffffffffdffffffffffd3333333333381111111111dffffffffdfffffffffdffffffffdffffffffdfffffffffdffffffffffd1111111111
-333333333dffffffffdffffffffffdffffffffdffffffffdfffffffffdfffffffffffd33333333338111111111dffffffffdffffffffffdffffffffdffffffffdfffffffffdfffffffffffd111111111
-333333333dffffffffdfffffffffdfffffffffdffffffffdffffffffffdffffffffffd33333333338111111111dffffffffdfffffffffdfffffffffdffffffffdffffffffffdffffffffffd111111111
-33333333dffffffffdffffffffffdfffffffffdfffffffffdfffffffffdfffffffffffd333333333811111111dffffffffdffffffffffdfffffffffdfffffffffdfffffffffdfffffffffffd11111111
-3333333dffffffffdfffffffffffdfffffffffdfffffffffdffffffffffdfffffffffffd3333333381111111dffffffffdfffffffffffdfffffffffdfffffffffdffffffffffdfffffffffffd1111111
-3333333dffffffffdfffffffffffdfffffffffdfffffffffdffffffffffdfffffffffffd3333333381111111dffffffffdfffffffffffdfffffffffdfffffffffdffffffffffdfffffffffffd1111111
+33333333333dffffffffdfffffffffdffffffffdffffffffdffffffffdfffffffffd333333333333811111111111dffffffffdfffffffffdffffffffdffffffffdffffffffdfffffffffd11111111111
+3333333333dfffffffffdfffffffffdffffffffdffffffffdfffffffffdfffffffffd3333333333381111111111dfffffffffdfffffffffdffffffffdffffffffdfffffffffdfffffffffd1111111111
+333333333dfffffffffdfffffffffdfffffffffdffffffffdfffffffffdffffffffffd33333333338111111111dfffffffffdfffffffffdfffffffffdffffffffdfffffffffdffffffffffd111111111
+333333333dfffffffffdfffffffffdfffffffffdffffffffdfffffffffdffffffffffd33333333338111111111dfffffffffdfffffffffdfffffffffdffffffffdfffffffffdffffffffffd111111111
+33333333dfffffffffdffffffffffdfffffffffdfffffffffdfffffffffdffffffffffd333333333811111111dfffffffffdffffffffffdfffffffffdfffffffffdfffffffffdffffffffffd11111111
+3333333dffffffffffdfffffffffdffffffffffdfffffffffdfffffffffdfffffffffffd3333333381111111dffffffffffdfffffffffdffffffffffdfffffffffdfffffffffdfffffffffffd1111111
+3333333dfffffffffdffffffffffdffffffffffdfffffffffdffffffffffdffffffffffd3333333381111111dfffffffffdffffffffffdffffffffffdfffffffffdffffffffffdffffffffffd1111111
 333333ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd33333338111111ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd111111
-33333dffffffffdffffffffffffdffffffffffdfffffffffdfffffffffffdffffffffffffd333333811111dffffffffdffffffffffffdffffffffffdfffffffffdfffffffffffdffffffffffffd11111
-33333dffffffffdffffffffffffdffffffffffdffffffffffdffffffffffdffffffffffffd333333811111dffffffffdffffffffffffdffffffffffdffffffffffdffffffffffdffffffffffffd11111
-3333dffffffffdffffffffffffdfffffffffffdffffffffffdfffffffffffdffffffffffffd3333381111dffffffffdffffffffffffdfffffffffffdffffffffffdfffffffffffdffffffffffffd1111
-333dffffffffdfffffffffffffdfffffffffffdffffffffffdfffffffffffdfffffffffffffd33338111dffffffffdfffffffffffffdfffffffffffdffffffffffdfffffffffffdfffffffffffffd111
-333dffffffffdfffffffffffffdfffffffffffdffffffffffdffffffffffffdffffffffffffd33338111dffffffffdfffffffffffffdfffffffffffdffffffffffdffffffffffffdffffffffffffd111
-33dffffffffdffffffffffffffdfffffffffffdffffffffffdffffffffffffdfffffffffffffd333811dffffffffdffffffffffffffdfffffffffffdffffffffffdffffffffffffdfffffffffffffd11
+33333dfffffffffffdffffffffffdffffffffffdffffffffffdffffffffffdfffffffffffd333333811111dfffffffffffdffffffffffdffffffffffdffffffffffdffffffffffdfffffffffffd11111
+33333dffffffffffdffffffffffdfffffffffffdffffffffffdffffffffffdfffffffffffd333333811111dffffffffffdffffffffffdfffffffffffdffffffffffdffffffffffdfffffffffffd11111
+3333dfffffffffffdffffffffffdfffffffffffdffffffffffdffffffffffdffffffffffffd3333381111dfffffffffffdffffffffffdfffffffffffdffffffffffdffffffffffdffffffffffffd1111
+333dfffffffffffdfffffffffffdfffffffffffdffffffffffdfffffffffffdffffffffffffd33338111dfffffffffffdfffffffffffdfffffffffffdffffffffffdfffffffffffdffffffffffffd111
+333dfffffffffffdfffffffffffdfffffffffffdffffffffffdfffffffffffdffffffffffffd33338111dfffffffffffdfffffffffffdfffffffffffdffffffffffdfffffffffffdffffffffffffd111
+33dfffffffffffdfffffffffffdffffffffffffdfffffffffffdfffffffffffdffffffffffffd333811dfffffffffffdfffffffffffdffffffffffffdfffffffffffdfffffffffffdffffffffffffd11
 33dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd33811dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd1
 33fddddddccccccbbbbfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfbbbbccccccdddddddf33811fddddddccccccbbbbfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfbbbbccccccdddddddf1
 33fddddddccccccbbbbfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfbbbbccccccdddddddf33811fddddddccccccbbbbfbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbfbbbbccccccdddddddf1
@@ -144,25 +163,6 @@ namespace myImages {
 33faaaaaaaafaaaaaaaaaaaaaafaaaaaaaaaaafaaaaaaaaaafaaaaaaaaaaaafaaaaaaaaaaaaaff33811faaaaaaaafaaaaaaaaaaaaaafaaaaaaaaaaafaaaaaaaaaafaaaaaaaaaaaafaaaaaaaaaaaaaff1
 33ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33811ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1
 3333333333333333333333333333333333333333333333333333333333333333333333333333333381111111111111111111111111111111111111111111111111111111111111111111111111111111
-`;
-            case "image3":
-            case "boat_l":return img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . 4 4 4 4 4 4 4 4 4 4 4 4 . . 
-. . . 4 4 4 4 4 4 4 4 4 4 . . . 
-. . . . . 4 4 4 4 4 4 4 . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
 `;
         }
         return null;
