@@ -12,7 +12,23 @@ namespace Game {
 
         player = new SubsPlayer()
 
-        if (currentPhase === Phase.Planning) {}
+        controller.right.onEvent(ControllerButtonEvent.Pressed, () => {
+            Board.moveCursor(CursorDirection.Right)
+        })
+        controller.left.onEvent(ControllerButtonEvent.Pressed, () => {
+            Board.moveCursor(CursorDirection.Left)
+        })
+        controller.up.onEvent(ControllerButtonEvent.Pressed, () => {
+            Board.moveCursor(CursorDirection.Up)
+        })
+        controller.down.onEvent(ControllerButtonEvent.Pressed, () => {
+            Board.moveCursor(CursorDirection.Down)
+        })
+
+        // Render loop:
+        if (currentPhase === Phase.Planning) {
+            Board.render()
+        }
     }
 }
 
