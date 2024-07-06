@@ -20,9 +20,9 @@ namespace Game {
     function setPhase() {
         if (currentPhase === Phase.Planning) {
             Board.focus({ 
-                mode: SelectionMode.TheirSubs,
-                row: 0,
-                col: 0,
+                mode: SelectionMode.YourSubs,
+                row: 3,
+                col: 2,
                 onSelectCallback: ({ row, col, depth }) => {
                     console.log(row + ':' + col + ':' + depth)
                     currentPhase = Phase.Executing

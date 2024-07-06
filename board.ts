@@ -105,30 +105,40 @@ namespace Board {
 
     function moveCursor(direction: CursorDirection) {
         // Move cursor around the board, if it's over the top add the Depth
-        if (direction === CursorDirection.Right) {
+        if (direction === CursorDirection.Right && selectionMode !== SelectionMode.TheirSubs) {
             currentFloorCursorIndex.col += 1
             if (currentFloorCursorIndex.col > (perFloorLocations[0].length - 1)) {
                 // Wrap around the right side to the left:
                 currentFloorCursorIndex.col = 0
             }
-        } else if (direction === CursorDirection.Left) {
+        } else if (direction === CursorDirection.Left && selectionMode !== SelectionMode.TheirSubs) {
             currentFloorCursorIndex.col -= 1
             if (currentFloorCursorIndex.col < 0) {
                 currentFloorCursorIndex.col = perFloorLocations[0].length - 1
             }
         } else if (direction === CursorDirection.Up) {
-            currentFloorCursorIndex.row -= 1
-            // If we go off the top of the current floor
-            if (currentFloorCursorIndex.row < 0) {
+            // if we restrict to their subs, we can only adjust Depth
+            if (selectionMode === SelectionMode.TheirSubs) {
                 currentDepth = currentDepth <= minDepth ? currentDepth = maxDepth : currentDepth -= 1
-                currentFloorCursorIndex.row = perFloorLocations.length - 1
+            } else {
+                currentFloorCursorIndex.row -= 1
+                // If we go off the top of the current floor
+                if (currentFloorCursorIndex.row < 0) {
+                    currentDepth = currentDepth <= minDepth ? currentDepth = maxDepth : currentDepth -= 1
+                    currentFloorCursorIndex.row = perFloorLocations.length - 1
+                }
             }
         } else if (direction === CursorDirection.Down) {
-            currentFloorCursorIndex.row += 1
-            // If we go off the bottom of the current floor
-            if (currentFloorCursorIndex.row > perFloorLocations.length - 1) {
+            // We can only adjust depth if we are selecting their subs
+            if (selectionMode === SelectionMode.TheirSubs) {
                 currentDepth = currentDepth >= maxDepth ? currentDepth = minDepth : currentDepth += 1
-                currentFloorCursorIndex.row = 0
+            } else {
+                currentFloorCursorIndex.row += 1
+                // If we go off the bottom of the current floor
+                if (currentFloorCursorIndex.row > perFloorLocations.length - 1) {
+                    currentDepth = currentDepth >= maxDepth ? currentDepth = minDepth : currentDepth += 1
+                    currentFloorCursorIndex.row = 0
+                }
             }
         }
 
