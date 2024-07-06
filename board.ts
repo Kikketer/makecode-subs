@@ -30,13 +30,21 @@ namespace Board {
     let minDepth = 1
     let maxDepth = 3
     let currentDepth = minDepth
-    const perFloorLocations = [
+    export const perFloorLocations = [
         [{ x: 21, y: 4 }, { x: 28, y: 4 }, { x: 35, y: 4 }, { x: 43, y: 4 }, { x: 50, y: 4 }, { x: 58, y: 4 }],
         [{ x: 18, y: 9 }, { x: 27, y: 9 }, { x: 35, y: 9 }, { x: 43, y: 9 }, { x: 52, y: 9 }, { x: 61, y: 9 }],
         [{ x: 14, y: 16 }, { x: 24, y: 16 }, { x: 35, y: 16 }, { x: 44, y: 16 }, { x: 54, y: 16 }, { x: 65, y: 16 }],
         [{ x: 10, y: 23 }, { x: 22, y: 23 }, { x: 34, y: 23 }, { x: 45, y: 23 }, { x: 56, y: 23 }, { x: 69, y: 23 }],
     ]
     let currentFloorCursorIndex: { row: number, col: number} = { row: 0, col: 0 }
+
+    export function getRandomSeaLocation() {
+        // Place boats randomly, people can't choose where their boats start
+        const randomRow = Math.randomRange(0, perFloorLocations.length - 1)
+        const randomCol = Math.randomRange(0, perFloorLocations[0].length - 1)
+
+        return { row: randomRow, col: randomCol }
+    }
 
     export function focus({ onSelectCallback, mode, row, col }: { 
             mode: SelectionMode,

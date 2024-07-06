@@ -16,6 +16,12 @@ class SubsPlayer {
 
     placeMine(x: number, y: number) {}
 
+    public placeBoats() {
+        const { row, col } = Board.getRandomSeaLocation()
+        console.log('Got row ' + row + ':' + col)
+        this.boats.push(new Boat(row, col))
+    }
+
     moveBoat(boatIndex: number, x: number, y: number) {
         if (!this.boats[boatIndex]) return
 

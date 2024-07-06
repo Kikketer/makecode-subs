@@ -14,6 +14,7 @@ namespace Game {
         scene.setBackgroundImage(assets.image`Main Board`)
 
         player = new SubsPlayer()
+        player.placeBoats()
 
         setPhase()
     }
