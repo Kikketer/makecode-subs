@@ -20,7 +20,7 @@ namespace Game {
     function setPhase() {
         if (currentPhase === Phase.Planning) {
             Board.focus({ 
-                mode: SelectionMode.Boats,
+                mode: SelectionMode.TheirSubs,
                 row: 0,
                 col: 0,
                 onSelectCallback: ({ row, col, depth }) => {
