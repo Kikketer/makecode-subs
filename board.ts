@@ -88,7 +88,9 @@ namespace Board {
         controller.A.removeEventListener(ControllerButtonEvent.Pressed, selectLocation)
 
         // Other cleanup
-        cursorSprite.destroy()
+        if (cursorSprite) {
+            cursorSprite.destroy()
+        }
         onSelCallback = () => {}
     }
 

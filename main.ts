@@ -5,7 +5,7 @@ enum Phase {
 }
 
 namespace Game {
-    let currentPhase: Phase = Phase.Planning
+    let currentPhase: Phase = Phase.ActionMenu
     let player: SubsPlayer
     let currentFocus
 
@@ -20,17 +20,25 @@ namespace Game {
 
     function setPhase() {
         if (currentPhase === Phase.ActionMenu) {
-        } else if (currentPhase === Phase.Planning) {
-            Board.focus({ 
-                mode: SelectionMode.YourSubs,
-                row: 3,
-                col: 2,
-                onSelectCallback: ({ row, col, depth }) => {
-                    console.log(row + ':' + col + ':' + depth)
-                    currentPhase = Phase.Executing
-                    Board.blur()
-                } 
+            Board.blur()
+            Menu.focus({
+                onMoveBoat: () => {
+                    Menu.blur()
+                    Board.focus({
+                        mode: SelectionMode.Boats,
+                        onSelectCallback: () => {}
+                    })
+                },
+                onDropCharge: () => {
+                    Menu.blur()
+                    // Board.focus({
+                    //     mode: SelectionMode.TheirSubs
+                    // })
+                }
             })
+        } else if (currentPhase === Phase.Executing) {
+            Menu.blur()
+            Board.blur()
         }
     }
 
