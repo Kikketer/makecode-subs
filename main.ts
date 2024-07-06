@@ -1,6 +1,7 @@
 enum Phase {
-    Planning = 0,
-    Executing = 0
+    ActionMenu,
+    Planning,
+    Executing
 }
 
 namespace Game {
@@ -18,7 +19,8 @@ namespace Game {
     }
 
     function setPhase() {
-        if (currentPhase === Phase.Planning) {
+        if (currentPhase === Phase.ActionMenu) {
+        } else if (currentPhase === Phase.Planning) {
             Board.focus({ 
                 mode: SelectionMode.YourSubs,
                 row: 3,

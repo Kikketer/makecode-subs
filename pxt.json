@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "multiplayer": "*"
+        "multiplayer": "*",
+        "arcade-text": "github:microsoft/arcade-text#v1.3.0"
     },
     "files": [
         "main.blocks",
@@ -19,7 +20,8 @@
         "boat.ts",
         "sub.ts",
         "mine.ts",
-        "board.ts"
+        "board.ts",
+        "menu.ts"
     ],
     "testFiles": [
         "test.ts"
