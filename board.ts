@@ -5,8 +5,21 @@ enum CursorDirection {
     Right
 }
 
+enum SelectionMode {
+    // You can only select underwater, but anywhere underwater
+    Subs,
+    // You can only select the top water
+    Boats,
+    // You can only select underwater in a given Z axis
+    DepthCharge
+}
+
+type SelectCallbackProps = { row: number, col: number, depth: number }
+
 namespace Board {
-    const cursorSprite: Sprite = sprites.create(assets.image`boat_dl`)
+    let cursorSprite: Sprite
+    let selectionMode: SelectionMode
+    let onSelCallback: (T: SelectCallbackProps) => void
     // How far to render the y distance given the depth
     const depthDistance = 30
     let currentDepth = 0
@@ -18,7 +31,51 @@ namespace Board {
     ]
     let currentFloorCursorIndex: { row: number, col: number} = { row: 0, col: 0 }
 
-    export function moveCursor(direction: CursorDirection) {
+    export function focus({ onSelectCallback, mode, row, col }: { 
+            mode: SelectionMode,
+            onSelectCallback: (T: SelectCallbackProps) => void,
+            // These are required if you do DepthCharge mode
+            row?: number,
+            col?: number
+        }) {
+
+        onSelCallback = onSelectCallback
+        selectionMode = mode
+        cursorSprite = sprites.create(assets.image`empty`)
+
+        controller.left.addEventListener(ControllerButtonEvent.Pressed, moveLeft)
+        controller.right.addEventListener(ControllerButtonEvent.Pressed, moveRight)
+        controller.up.addEventListener(ControllerButtonEvent.Pressed, moveUp)
+        controller.down.addEventListener(ControllerButtonEvent.Pressed, moveDown)
+        controller.A.addEventListener(ControllerButtonEvent.Pressed, selectLocation)
+
+        render()
+    }
+
+    export function blur() {
+        controller.left.removeEventListener(ControllerButtonEvent.Pressed, moveLeft)
+        controller.right.removeEventListener(ControllerButtonEvent.Pressed, moveRight)
+        controller.up.removeEventListener(ControllerButtonEvent.Pressed, moveUp)
+        controller.down.removeEventListener(ControllerButtonEvent.Pressed, moveDown)
+        controller.A.removeEventListener(ControllerButtonEvent.Pressed, selectLocation)
+
+        // Other cleanup
+        cursorSprite.destroy()
+        onSelCallback = () => {}
+    }
+
+    function selectLocation() {
+        if (onSelCallback) {
+            onSelCallback({ row: currentFloorCursorIndex.row, col: currentFloorCursorIndex.col, depth: currentDepth })
+        }
+    }
+
+    function moveLeft() { return moveCursor(CursorDirection.Left) }
+    function moveRight() { return moveCursor(CursorDirection.Right) }
+    function moveUp() { return moveCursor(CursorDirection.Up) }
+    function moveDown() { return moveCursor(CursorDirection.Down) }
+
+    function moveCursor(direction: CursorDirection) {
         // Move cursor around the board, if it's over the top add the Depth
         if (direction === CursorDirection.Right) {
             currentFloorCursorIndex.col += 1

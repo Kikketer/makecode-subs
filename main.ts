@@ -2,9 +2,11 @@ enum Phase {
     Planning = 0,
     Executing = 0
 }
+
 namespace Game {
     let currentPhase: Phase = Phase.Planning
     let player: SubsPlayer
+    let currentFocus
 
     export function init() {
         scene.setBackgroundColor(0)
@@ -12,24 +14,26 @@ namespace Game {
 
         player = new SubsPlayer()
 
-        controller.right.onEvent(ControllerButtonEvent.Pressed, () => {
-            Board.moveCursor(CursorDirection.Right)
-        })
-        controller.left.onEvent(ControllerButtonEvent.Pressed, () => {
-            Board.moveCursor(CursorDirection.Left)
-        })
-        controller.up.onEvent(ControllerButtonEvent.Pressed, () => {
-            Board.moveCursor(CursorDirection.Up)
-        })
-        controller.down.onEvent(ControllerButtonEvent.Pressed, () => {
-            Board.moveCursor(CursorDirection.Down)
-        })
+        setPhase()
+    }
 
-        // Render loop:
+    function setPhase() {
         if (currentPhase === Phase.Planning) {
-            Board.render()
+            Board.focus({ 
+                mode: SelectionMode.Boats,
+                row: 0,
+                col: 0,
+                onSelectCallback: ({ row, col, depth }) => {
+                    console.log(row + ':' + col + ':' + depth)
+                    currentPhase = Phase.Executing
+                    Board.blur()
+                } 
+            })
         }
     }
-}
 
+    function focusCursor() {}
+
+    function focusMenu() {}
+}
 Game.init()
