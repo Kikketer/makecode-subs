@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "pxt-arcade": "^1.12.54"
+  },
+  "devDependencies": {
+    "pxt": "^0.5.1"
+  }
+}
