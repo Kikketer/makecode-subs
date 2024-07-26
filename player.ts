@@ -1,30 +1,48 @@
-namespace Player {
-    let mySprite: Sprite
-    export let myName: number
-    let myBoats: Array<Boat> = []
+type Depth = 1 | 2 | 3
 
-    function move() {
-        console.log('Moving! ' + myName)
-        myBoats[0].move(10, 5)
+class SubsPlayer {
+    boats: Array<Boat> = []
+    subs: Array<Sub> = []
+    mine: Mine
+    queuedAction: { action: ActionType, boat: Boat, toX?: number, toY?: number }
+
+    constructor() {
+        // this.mySprite = sprite
+        // ctrl.onButtonEvent(ControllerButton.Left, ControllerButtonEvent.Pressed, () => this.move())
     }
 
-    function perform() {
-        // mp.setPlayerState(mp.getPlayerByIndex(0), 0, 1)
-        mp.getPlayerProperty(mp.getPlayerByIndex(0), mp.PlayerProperty.Index)
-        myBoats[0].performAction()
+    // Setups:
+    placeSub(x: number, y: number, depth: Depth) {}
+
+    placeMine(x: number, y: number) {}
+
+    public placeBoats() {
+        const { row, col } = Board.getRandomSeaLocation()
+        console.log('Got row ' + row + ':' + col)
+        this.boats.push(new Boat(row, col))
     }
 
-    export function init() {
-        myName = Math.randomRange(0, 20)
-        console.log('Init player ' + myName)
+    moveBoat(boatIndex: number, x: number, y: number) {
+        if (!this.boats[boatIndex]) return
 
-        myBoats[0] = new Boat(30, 30)
-
-        Multiplayer.init(myBoats[0].sprite)
-
-        controller.up.onEvent(ControllerButtonEvent.Pressed, move)
-        controller.A.onEvent(ControllerButtonEvent.Pressed, perform)
+        this.queuedAction = {
+            action: ActionType.Move,
+            boat: this.boats[boatIndex],
+            toX: x,
+            toY: y
+        }
     }
 
-    export function onPlanningComplete() {}
+    fireDepthCharge(boatIndex: number) {
+        if (!this.boats[boatIndex]) return
+
+        this.queuedAction = {
+            action: ActionType.Fire,
+            boat: this.boats[boatIndex]
+        }
+    }
+
+    clearAction() {
+        this.queuedAction = undefined
+    }
 }

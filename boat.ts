@@ -5,17 +5,18 @@ enum ActionType {
 
 class Boat {
     sprite: Sprite
-    queuedAction: {
+    queuedAction?: {
         actionType: ActionType,
         to?: { x: number, y: number },
         depth?: number
     }
 
-    constructor(x?: number, y?: number) {
-        this.sprite = sprites.create(assets.image`boat_l`, SpriteKind.Player)
-        if (x && y) {
-            this.sprite.x = x
-            this.sprite.y = y
+    constructor(row?: number, col?: number) {
+        this.sprite = sprites.create(assets.image`empty`, SpriteKind.Player)
+
+        if (row != null && col != null) {
+            this.sprite.x = Board.perFloorLocations[row][col].x
+            this.sprite.y = Board.perFloorLocations[row][col].y
         }
         
         animation.runImageAnimation(
