@@ -27,6 +27,9 @@ jobs:
       
       - name: Install Makecode PXT
         run: ./node_modules/.bin/pxt target arcade
+        
+      - name: Install PXT Dependencies
+        run: ./node_modules/.bin/pxt install
 
       - name: Build the project (Web)
         run: ./node_modules/.bin/pxt build
