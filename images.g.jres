@@ -24,6 +24,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Menu Background"
     },
+    "image6": {
+        "data": "hwQQABAAAAAAcHd3dwcAAAAwMzMzdwcAAAAAMwAzdwcAAAAAAAAzdwAzMwMAADMHACIiIgIAA3cAAAAAAABzdwAAAAAAADAHADADAAAwM3cAMzMDADMDByIiIiIAA3MHAAAAAAAzdwAAAAAAADMHAAAAAAAzcwAAAAAwMzN3AAAAADBwdwcAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "copy_test"
+    },
     "anim1": {
         "namespace": "myAnimations",
         "id": "anim1",

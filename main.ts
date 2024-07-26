@@ -3,14 +3,13 @@ enum Phase {
     Planning,
     Executing
 }
-
 namespace Game {
     let currentPhase: Phase = Phase.ActionMenu
     let player: SubsPlayer
     let currentFocus
 
     export function init() {
-        scene.setBackgroundColor(0)
+        scene.setBackgroundColor(1)
         scene.setBackgroundImage(assets.image`Main Board`)
 
         player = new SubsPlayer()
