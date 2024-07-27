@@ -38,6 +38,9 @@ jobs:
 
       - name: Build the project (Web)
         run: ./node_modules/.bin/pxt build
+
+      - name: DEBUG
+        run: ls -la built
       
       - name: Move the built files to js folder
         run: mv built/debug/binary.js assets/js/binary.js
