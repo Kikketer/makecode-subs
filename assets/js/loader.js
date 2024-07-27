@@ -29,7 +29,7 @@ function makeCodeRun(options) {
                 // Stolen from the binary.js file that lives in assets
                 // meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.53/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.0","target":"arcade","targetVersion":"1.12.53"}
                 meta = {
-                    "simUrl": "https://trg-arcade.userpxt.io/v1.12.53/---simulator",
+                    "simUrl": "https://trg-arcade.userpxt.io/v1.12.53/---simulator?hideSimButtons=1fullscreen=1&autofocus=1&nofooter=1",
                     "cdnUrl": "https://pxt.azureedge.net",
                     "version": "0.0.0",
                     "target": "arcade",
