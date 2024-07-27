@@ -55,8 +55,8 @@ function makeCodeRun(options) {
             parts: [],
             code: code,
             partDefinitions: {},
-            cdnUrl: meta.cdnUrl,
-            version: meta.target,
+            cdnUrl: meta?.cdnUrl ?? 'https://pxt.azureedge.net',
+            version: meta?.target ?? '1.12.53',
             storedState: simState,
             frameCounter: 1,
             options: {
