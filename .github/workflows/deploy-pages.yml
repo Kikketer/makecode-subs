@@ -16,7 +16,7 @@ jobs:
   
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Install node.js
         uses: actions/setup-node@v3
         with:
@@ -69,6 +69,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./assets
+          name: github-pages
 
   deploy:
     runs-on: ubuntu-latest
