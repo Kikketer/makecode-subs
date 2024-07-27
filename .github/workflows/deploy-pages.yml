@@ -31,7 +31,7 @@ jobs:
         run: npm install
 
       - name: Add node_modules/.bin to PATH
-        run: echo "::add-path::$(npm bin)"
+        run: echo "./node_modules/.bin" >> $GITHUB_PATH
       
       - name: Install Makecode PXT Arcade
         run: pxt target arcade
