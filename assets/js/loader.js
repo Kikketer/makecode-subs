@@ -24,10 +24,23 @@ function makeCodeRun(options) {
             if (status != 200)
                 return;
             code = c;
-            // find metadata
-            code.replace(/^\/\/\s+meta=([^\n]+)\n/m, function (m, metasrc) {
-                meta = JSON.parse(metasrc);
-            })
+            // If there is no metadata, make it up
+            if (!code.match(/^\/\/\s+meta=/m)) {
+                // Stolen from the binary.js file that lives in assets
+                // meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.53/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.0","target":"arcade","targetVersion":"1.12.53"}
+                meta = {
+                    "simUrl": "https://trg-arcade.userpxt.io/v1.12.53/---simulator",
+                    "cdnUrl": "https://pxt.azureedge.net",
+                    "version": "0.0.0",
+                    "target": "arcade",
+                    "targetVersion": "1.12.53"
+                }
+            } else {
+                // find metadata
+                code.replace(/^\/\/\s+meta=([^\n]+)\n/m, function (m, metasrc) {
+                    meta = JSON.parse(metasrc);
+                })
+            }
             var vel = document.getElementById("version");
             if (meta?.version && meta?.repo && vel) {
                 var ap = document.createElement("a");
@@ -55,8 +68,8 @@ function makeCodeRun(options) {
             parts: [],
             code: code,
             partDefinitions: {},
-            cdnUrl: meta?.cdnUrl ?? 'https://pxt.azureedge.net',
-            version: meta?.target ?? '1.12.53',
+            cdnUrl: meta.cdnUrl,
+            version: meta.target,
             storedState: simState,
             frameCounter: 1,
             options: {
