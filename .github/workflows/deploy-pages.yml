@@ -14,18 +14,14 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-        matrix:
-          node-version: [20.x]
   
     steps:
       - name: Checkout repository
         uses: actions/checkout@v1
-      - name: Install node.js ${{ matrix.node-version }}
+      - name: Install node.js
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 20.x
       
       - name: Install dependencies
         run: npm install
@@ -68,7 +64,7 @@ jobs:
       - name: bundle all
         run: |
           cat binary-*.uf2 > assets/arcade.uf2
-          cp binary.js assets/js/binary.js
+          cp binary.js assets/js/binary-new.js
       
       # - name: Move the built files to js folder
       #   run: cp built/debug/binary.js assets/js/binary.js
