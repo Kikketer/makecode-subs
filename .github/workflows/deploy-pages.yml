@@ -43,22 +43,19 @@ jobs:
           pxt build --hw samd51 --clean
           cp ./built/binary.uf2 binary-d51.uf2
 
-      - name: Build the project (F4)
+      - name: Build the project (F4 aka meowbit)
         continue-on-error: true
         run: |
           pxt install --hw stm32f401
           pxt build --hw stm32f401 --clean
           cp ./built/binary.uf2 binary-f4.uf2
 
-      - name: Build the project (P0)
+      - name: Build the project (P0 aka raspberry pi)
         continue-on-error: true
         run: |
           pxt install --hw rpi
           pxt build --hw rpi --clean
           cp ./built/binary.uf2 binary-p0.uf2
-
-      - name: DEBUG
-        run: ls -la built
 
       - name: bundle all
         run: |
