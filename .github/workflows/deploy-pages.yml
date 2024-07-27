@@ -29,21 +29,52 @@ jobs:
       
       - name: Install dependencies
         run: npm install
+
+      - name: Add node_modules/.bin to PATH
+        run: echo "::add-path::$(npm bin)"
       
-      - name: Install Makecode PXT
-        run: ./node_modules/.bin/pxt target arcade
+      - name: Install Makecode PXT Arcade
+        run: pxt target arcade
         
       - name: Install PXT Dependencies
-        run: ./node_modules/.bin/pxt install
+        run: 
 
       - name: Build the project (Web)
-        run: ./node_modules/.bin/pxt build
+        run: |
+          pxt install
+          pxt build --clean
+          cp ./built/binary.js binary.js
+
+      - name: Build the project (D51)
+        run: |
+          pxt install --hw samd51
+          pxt build --hw samd51 --clean
+          cp ./built/binary.uf2 binary-d51.uf2
+
+      - name: Build the project (F4)
+        continue-on-error: true
+        run: |
+          pxt install --hw stm32f401
+          pxt build --hw stm32f401 --clean
+          cp ./built/binary.uf2 binary-f4.uf2
+
+      - name: Build the project (P0)
+        continue-on-error: true
+        run: |
+          pxt install --hw rpi
+          pxt build --hw rpi --clean
+          cp ./built/binary.uf2 binary-p0.uf2
 
       - name: DEBUG
         run: ls -la built
+
+      - name: bundle all
+        run: |
+          cat binary-*.uf2 > assets/arcade.uf2
+          cp binary.js assets/js/binary.js
       
-      - name: Move the built files to js folder
-        run: mv built/debug/binary.js assets/js/binary.js
+      # - name: Move the built files to js folder
+      #   run: mv built/debug/binary.js assets/js/binary.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
