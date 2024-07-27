@@ -9,3 +9,5 @@
  * 
  * To register a constrol simmessages, use addSimMessageHandler
  */
+
+console.log('Hi there')
