@@ -35,9 +35,6 @@ jobs:
       
       - name: Install Makecode PXT Arcade
         run: pxt target arcade
-        
-      - name: Install PXT Dependencies
-        run: 
 
       - name: Build the project (Web)
         run: |
