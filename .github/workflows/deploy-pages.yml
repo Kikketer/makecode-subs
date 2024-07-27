@@ -40,7 +40,7 @@ jobs:
         run: |
           pxt install
           pxt build --clean
-          cp ./built/binary.js binary.js
+          cp ./built/debug/binary.js binary.js
 
       - name: Build the project (D51)
         run: |
@@ -71,7 +71,7 @@ jobs:
           cp binary.js assets/js/binary.js
       
       # - name: Move the built files to js folder
-      #   run: mv built/debug/binary.js assets/js/binary.js
+      #   run: cp built/debug/binary.js assets/js/binary.js
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
